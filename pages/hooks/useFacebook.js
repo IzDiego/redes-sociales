@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 
-const useFacebook = function ({
-  appId,
-  version = "v12.0",
-  autoLogAppEvents = true,
-  xfbml = true,
-  debug = false,
-  lang = "es_LA",
-}) {
+const useFacebook = function ({ appId }) {
   const [isFacebookSDKReady, setFacebookSDKReady] = useState(false);
-
+  const version = "v12.0";
+  const autoLogAppEvents = true;
+  const xfbml = true;
+  const debug = false;
+  const lang = "es_LA";
   useEffect(() => {
     window.fbAsyncInit = function () {
       FB.init({
